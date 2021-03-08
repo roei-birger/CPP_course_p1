@@ -23,7 +23,7 @@ TEST_CASE("Good snowman code with all the options")
     CHECK(snowman(33224442) == string("   _   \n  /_\\  \n (o_o) \n (   ) \n (\" \") "));
     CHECK(snowman(43443342) == string("  ___  \n (_*_) \n (-_-) \n/(   )\\\n (\" \") "));
     CHECK(snowman(43223343) == string("  ___  \n (_*_) \n (o_o) \n/(   )\\\n (___) "));
-    CHECK(snowman(43323343) == string("  ___  \n (_*_) \n (O o) \n/(   )\\\n (___) "));
+    CHECK(snowman(44323343) == string("  ___  \n (_*_) \n (O o) \n/(   )\\\n (___) "));
 }
 
 
