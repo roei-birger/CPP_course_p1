@@ -1,5 +1,4 @@
 #include "snowman.hpp"
-#include <iostream>
 #include <string>
 
 using namespace std;
@@ -7,7 +6,7 @@ using namespace ariel;
 
 namespace ariel
 {
-    string myH(int num)
+    string myH(int num) //return the correct ans for - H
     {
 
         switch (num)
@@ -25,7 +24,7 @@ namespace ariel
         }
     }
 
-    string myN(int num)
+    string myN(int num) //return the correct ans for - N
     {
         switch (num)
         {
@@ -42,7 +41,7 @@ namespace ariel
         }
     }
 
-    string myL(int num)
+    string myL(int num) //return the correct ans for - L
     {
         switch (num)
         {
@@ -59,7 +58,7 @@ namespace ariel
         }
     }
 
-    string myR(int num)
+    string myR(int num) //return the correct ans for - R
     {
         switch (num)
         {
@@ -75,7 +74,7 @@ namespace ariel
             throw invalid_argument("Inserting incorrect literature");
         }
     }
-    string myX(int num)
+    string myX(int num) //return the correct ans for - X
     {
         switch (num)
         {
@@ -91,7 +90,7 @@ namespace ariel
             throw invalid_argument("Inserting incorrect literature");
         }
     }
-    string myY(int num)
+    string myY(int num) //return the correct ans for - Y
     {
         switch (num)
         {
@@ -107,7 +106,7 @@ namespace ariel
             throw invalid_argument("Inserting incorrect literature");
         }
     }
-    string myT(int num)
+    string myT(int num) //return the correct ans for - T
     {
         switch (num)
         {
@@ -123,7 +122,7 @@ namespace ariel
             throw invalid_argument("Inserting incorrect literature");
         }
     }
-    string myB(int num)
+    string myB(int num) //return the correct ans for - B
     {
         switch (num)
         {
@@ -142,18 +141,22 @@ namespace ariel
 
     string snowman(long num)
     {
-        string finalSnowman = "init";
+        string finalSnowman = "init"; //init the final string
         const int div = 10;
-        const int zero = 0;
-        const int five = 5;
-        const int six = 6;
-        const int seven = 7;
-        const int eight = 8;
         const int max = 44444444;
         const int min = 11111111;
 
+        const int hat = 1;
+        const int nose = 2;
+        const int leftEye = 3;
+        const int rightEye = 4;
+        const int leftArm = 5;
+        const int rightArm = 6;
+        const int torso = 7;
+        const int base = 8;
+        const int numOfDig = 8;
 
-        if (num < min || num > max)
+        if (num < min || num > max) //check the number range
         {
             throw invalid_argument("Inserting incorrect literature");
         }
@@ -167,37 +170,37 @@ namespace ariel
         string t = "t";
         string b = "b";
 
-
         int temp = 0;
-        for (int i = eight; i > zero; i--)
+
+        for (int i = numOfDig; i > 0; i--) //Assigns the appropriate character to each variable
         {
             temp = (int)num % div;
             num = num / div;
 
             switch (i)
             {
-            case eight:
+            case base:
                 b = myB(temp);
                 break;
-            case seven:
+            case torso:
                 t = myT(temp);
                 break;
-            case six:
+            case rightArm:
                 y = myY(temp);
                 break;
-            case five:
+            case leftArm:
                 x = myX(temp);
                 break;
-            case 4:
+            case rightEye:
                 r = myR(temp);
                 break;
-            case 3:
+            case leftEye:
                 l = myL(temp);
                 break;
-            case 2:
+            case nose:
                 n = myN(temp);
                 break;
-            case 1:
+            case hat:
                 h = myH(temp);
                 break;
             default:
@@ -205,10 +208,10 @@ namespace ariel
             }
         }
 
-        finalSnowman = h;
+        finalSnowman = h; //Put the hat in the string
         string levelThree = ".";
 
-        if (x == "\\")
+        if (x == "\\") //check the left-Hand cases
         {
             levelThree = x + "(" + l + n + r + ")";
             finalSnowman += levelThree;
@@ -230,8 +233,8 @@ namespace ariel
             finalSnowman += " ";
         }
 
-        finalSnowman = finalSnowman + "\n" + x + t + y + "\n" + b;
+        finalSnowman = finalSnowman + "\n" + x + t + y + "\n" + b; //Completing the snowman as a string
 
-        return finalSnowman;
+        return finalSnowman; //Return the final snowman
     }
 }
