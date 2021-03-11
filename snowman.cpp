@@ -2,7 +2,6 @@
 #include <string>
 
 using namespace std;
-using namespace ariel;
 
 namespace ariel
 {
@@ -20,7 +19,7 @@ namespace ariel
         case 4:
             return "  ___  \n (_*_) \n";
         default:
-            throw invalid_argument("Inserting incorrect literature");
+            throw out_of_range("Inserting incorrect literature");
         }
     }
 
@@ -37,7 +36,7 @@ namespace ariel
         case 4:
             return " ";
         default:
-            throw invalid_argument("Inserting incorrect literature");
+            throw out_of_range("Inserting incorrect literature");
         }
     }
 
@@ -54,7 +53,7 @@ namespace ariel
         case 4:
             return "-";
         default:
-            throw invalid_argument("Inserting incorrect literature");
+            throw out_of_range("Inserting incorrect literature");
         }
     }
 
@@ -71,7 +70,7 @@ namespace ariel
         case 4:
             return "-";
         default:
-            throw invalid_argument("Inserting incorrect literature");
+            throw out_of_range("Inserting incorrect literature");
         }
     }
     string myX(int num) //return the correct ans for - X
@@ -87,7 +86,7 @@ namespace ariel
         case 4:
             return " ";
         default:
-            throw invalid_argument("Inserting incorrect literature");
+            throw out_of_range("Inserting incorrect literature");
         }
     }
     string myY(int num) //return the correct ans for - Y
@@ -103,7 +102,7 @@ namespace ariel
         case 4:
             return " ";
         default:
-            throw invalid_argument("Inserting incorrect literature");
+            throw out_of_range("Inserting incorrect literature");
         }
     }
     string myT(int num) //return the correct ans for - T
@@ -119,7 +118,7 @@ namespace ariel
         case 4:
             return "(   )";
         default:
-            throw invalid_argument("Inserting incorrect literature");
+            throw out_of_range("Inserting incorrect literature");
         }
     }
     string myB(int num) //return the correct ans for - B
@@ -135,7 +134,7 @@ namespace ariel
         case 4:
             return " (   ) ";
         default:
-            throw invalid_argument("Inserting incorrect literature");
+            throw out_of_range("Inserting incorrect literature");
         }
     }
 
@@ -158,7 +157,7 @@ namespace ariel
 
         if (num < min || num > max) //check the number range
         {
-            throw invalid_argument("Inserting incorrect literature");
+            throw out_of_range("Inserting incorrect literature");
         }
 
         string h = "h";
@@ -204,7 +203,7 @@ namespace ariel
                 h = myH(temp);
                 break;
             default:
-                throw invalid_argument("Inserting incorrect literature");
+                throw out_of_range("Inserting incorrect literature");
             }
         }
 
